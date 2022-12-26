@@ -1,0 +1,1333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://appscloud.campeche.gob.mx/ControlAsistenciaServiciosWeb/ControlAsistenciaServiciosWeb.Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://appscloud.campeche.gob.mx/ControlAsistenciaServiciosWeb/ControlAsistenciaServiciosWeb.Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://appscloud.campeche.gob.mx/ControlAsistenciaServiciosWeb/ControlAsistenciaServiciosWeb.Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ControlAsistenciaServiciosWeb" />
+      <xsd:import schemaLocation="http://appscloud.campeche.gob.mx/ControlAsistenciaServiciosWeb/ControlAsistenciaServiciosWeb.Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Objetos" />
+      <xsd:import schemaLocation="http://appscloud.campeche.gob.mx/ControlAsistenciaServiciosWeb/ControlAsistenciaServiciosWeb.Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUsuarioXUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUsuarioXUsername" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUsuarioXUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUsuarioXUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUsuarioXID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUsuarioXID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUsuarioXID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUsuarioXIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EliminarPermisosUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPermisosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EliminarPermisosUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPermisosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AsignarPermisoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarPermisoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AsignarPermisoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarPermisoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUsuariosTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUsuariosTodos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUsuariosTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUsuariosTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarEmpleadoXID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarEmpleadoXID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarEmpleadoXID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarEmpleadoXIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarEmpleadoXNumeroEmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarEmpleadoXNumeroEmp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarEmpleadoXNumeroEmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarEmpleadoXNumeroEmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelecionarEmpleadosRamoUnidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelecionarEmpleadosRamoUnidad" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelecionarEmpleadosRamoUnidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelecionarEmpleadosRamoUnidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelecionarEmpleadosRH_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelecionarEmpleadosRH" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelecionarEmpleadosRH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelecionarEmpleadosRHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarPermisosDisponibles_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarPermisosDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarPermisosDisponibles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarPermisosDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModificarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModificarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarDatosEmpleadoNomina_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarDatosEmpleadoNomina" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarDatosEmpleadoNomina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarDatosEmpleadoNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTodosEmpleadosNomina_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTodosEmpleadosNomina" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTodosEmpleadosNomina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTodosEmpleadosNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTodosEmpleadosChecador_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTodosEmpleadosChecador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTodosEmpleadosChecador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTodosEmpleadosChecadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarDatosEmpleadoRH_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarDatosEmpleadoRH" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarDatosEmpleadoRH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarDatosEmpleadoRHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarFotografia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarFotografia" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarFotografia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarFotografiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorariosSeleccionarXIdEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosSeleccionarXIdEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorariosSeleccionarXIdEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosSeleccionarXIdEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorarioEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorarioEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorarioEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorarioEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorarioInsertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorarioInsertar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorarioInsertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorarioInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorarioModificar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorarioModificar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HorarioModificar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorarioModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadoresSeleccionarTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadoresSeleccionarTodos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadoresSeleccionarTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadoresSeleccionarTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadoresSeleccionarPorEmpleadosAsiganados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadoresSeleccionarPorEmpleadosAsiganados" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadoresSeleccionarPorEmpleadosAsiganados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadoresSeleccionarPorEmpleadosAsiganadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorSeleccionar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorSeleccionar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorSeleccionar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorSeleccionarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorInsertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorInsertar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorInsertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorModificar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorModificar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorModificar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorModificarIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorModificarIP" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorModificarIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorModificarIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorSeleccionarXMAC_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorSeleccionarXMAC" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorSeleccionarXMAC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorSeleccionarXMACResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorHoraServidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorHoraServidor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorHoraServidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorHoraServidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoSeleccionar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoSeleccionar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoSeleccionar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoSeleccionarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesosSeleccionarXEmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesosSeleccionarXEmp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesosSeleccionarXEmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesosSeleccionarXEmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarRegistro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarRegistroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarAdministrador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarAdministrador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarAdministrador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarAdministradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesModificar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesModificar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesModificar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarExtras_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarExtras" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarExtras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarExtrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UnidadesSeleccionarTodasXCvRamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnidadesSeleccionarTodasXCvRamo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UnidadesSeleccionarTodasXCvRamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnidadesSeleccionarTodasXCvRamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RamosSeleccionarTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RamosSeleccionarTodos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RamosSeleccionarTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RamosSeleccionarTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXNumeroEmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXNumeroEmp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXNumeroEmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXNumeroEmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoUnidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoUnidad" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoUnidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoUnidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoExtras_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoExtras" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoExtras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoExtrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXNumeroEmpExtras_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXNumeroEmpExtras" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXNumeroEmpExtras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXNumeroEmpExtrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoUnidadExtras_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoUnidadExtras" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoUnidadExtras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoUnidadExtrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoPaseSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoPaseSalida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoPaseSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoPaseSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXNumeroEmpPaseSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXNumeroEmpPaseSalida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXNumeroEmpPaseSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXNumeroEmpPaseSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoUnidadPaseSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoUnidadPaseSalida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReporteESXRamoUnidadPaseSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteESXRamoUnidadPaseSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DiasInhabiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:DiasInhabiles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DiasInhabiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DiasInhabilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarDiasInhabiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDiasInhabiles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarDiasInhabiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDiasInhabilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EliminarDiasInhabiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarDiasInhabiles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EliminarDiasInhabiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarDiasInhabilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorReplicaInsertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorReplicaInsertar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorReplicaInsertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorReplicaInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorReplicaSeleccionarTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorReplicaSeleccionarTodos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ChecadorReplicaSeleccionarTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChecadorReplicaSeleccionarTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarPaseSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarPaseSalida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesoInsertarPaseSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesoInsertarPaseSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarFaltasEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarFaltasEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarFaltasEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarFaltasEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarDiasEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarDiasEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarDiasEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarDiasEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarEmpleadoDatosBasicosXNumeroEmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarEmpleadoDatosBasicosXNumeroEmp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarEmpleadoDatosBasicosXNumeroEmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarEmpleadoDatosBasicosXNumeroEmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUltimoTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUltimoTurno" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarUltimoTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarUltimoTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTurnoXFecha_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTurnoXFecha" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTurnoXFecha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTurnoXFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTurnoXTipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTurnoXTipo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SeleccionarTurnoXTipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTurnoXTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesosSeleccionarXIdEmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesosSeleccionarXIdEmp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ControlAccesosSeleccionarXIdEmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlAccesosSeleccionarXIdEmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_JustificarControlAcceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:JustificarControlAcceso" />
+  </wsdl:message>
+  <wsdl:message name="IService1_JustificarControlAcceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JustificarControlAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarFaltasXPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarFaltasXPartida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarFaltasXPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarFaltasXPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarRetardosXPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarRetardosXPartida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarRetardosXPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarRetardosXPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarPuntualidadXPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarPuntualidadXPartida" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EvaluarPuntualidadXPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EvaluarPuntualidadXPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TestWs_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestWs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TestWs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestWsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUsuarioXUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarUsuarioXUsername" message="tns:IService1_SeleccionarUsuarioXUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarUsuarioXUsernameResponse" message="tns:IService1_SeleccionarUsuarioXUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUsuarioXID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarUsuarioXID" message="tns:IService1_SeleccionarUsuarioXID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarUsuarioXIDResponse" message="tns:IService1_SeleccionarUsuarioXID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPermisosUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EliminarPermisosUsuario" message="tns:IService1_EliminarPermisosUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EliminarPermisosUsuarioResponse" message="tns:IService1_EliminarPermisosUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarPermisoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AsignarPermisoUsuario" message="tns:IService1_AsignarPermisoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AsignarPermisoUsuarioResponse" message="tns:IService1_AsignarPermisoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUsuariosTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarUsuariosTodos" message="tns:IService1_SeleccionarUsuariosTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarUsuariosTodosResponse" message="tns:IService1_SeleccionarUsuariosTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarEmpleadoXID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarEmpleadoXID" message="tns:IService1_SeleccionarEmpleadoXID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarEmpleadoXIDResponse" message="tns:IService1_SeleccionarEmpleadoXID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarEmpleadoXNumeroEmp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarEmpleadoXNumeroEmp" message="tns:IService1_SeleccionarEmpleadoXNumeroEmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarEmpleadoXNumeroEmpResponse" message="tns:IService1_SeleccionarEmpleadoXNumeroEmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarEmpleadosRamoUnidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelecionarEmpleadosRamoUnidad" message="tns:IService1_SelecionarEmpleadosRamoUnidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelecionarEmpleadosRamoUnidadResponse" message="tns:IService1_SelecionarEmpleadosRamoUnidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarEmpleadosRH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelecionarEmpleadosRH" message="tns:IService1_SelecionarEmpleadosRH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelecionarEmpleadosRHResponse" message="tns:IService1_SelecionarEmpleadosRH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPermisosDisponibles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarPermisosDisponibles" message="tns:IService1_SeleccionarPermisosDisponibles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarPermisosDisponiblesResponse" message="tns:IService1_SeleccionarPermisosDisponibles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModificarEmpleado" message="tns:IService1_ModificarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModificarEmpleadoResponse" message="tns:IService1_ModificarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarEmpleado" message="tns:IService1_InsertarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarEmpleadoResponse" message="tns:IService1_InsertarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarDatosEmpleadoNomina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarDatosEmpleadoNomina" message="tns:IService1_SeleccionarDatosEmpleadoNomina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarDatosEmpleadoNominaResponse" message="tns:IService1_SeleccionarDatosEmpleadoNomina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTodosEmpleadosNomina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarTodosEmpleadosNomina" message="tns:IService1_SeleccionarTodosEmpleadosNomina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarTodosEmpleadosNominaResponse" message="tns:IService1_SeleccionarTodosEmpleadosNomina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTodosEmpleadosChecador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarTodosEmpleadosChecador" message="tns:IService1_SeleccionarTodosEmpleadosChecador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarTodosEmpleadosChecadorResponse" message="tns:IService1_SeleccionarTodosEmpleadosChecador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarDatosEmpleadoRH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarDatosEmpleadoRH" message="tns:IService1_SeleccionarDatosEmpleadoRH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarDatosEmpleadoRHResponse" message="tns:IService1_SeleccionarDatosEmpleadoRH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarFotografia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarFotografia" message="tns:IService1_ActualizarFotografia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarFotografiaResponse" message="tns:IService1_ActualizarFotografia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorariosSeleccionarXIdEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/HorariosSeleccionarXIdEmpleado" message="tns:IService1_HorariosSeleccionarXIdEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/HorariosSeleccionarXIdEmpleadoResponse" message="tns:IService1_HorariosSeleccionarXIdEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorarioEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/HorarioEliminar" message="tns:IService1_HorarioEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/HorarioEliminarResponse" message="tns:IService1_HorarioEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorarioInsertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/HorarioInsertar" message="tns:IService1_HorarioInsertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/HorarioInsertarResponse" message="tns:IService1_HorarioInsertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorarioModificar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/HorarioModificar" message="tns:IService1_HorarioModificar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/HorarioModificarResponse" message="tns:IService1_HorarioModificar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadoresSeleccionarTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadoresSeleccionarTodos" message="tns:IService1_ChecadoresSeleccionarTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadoresSeleccionarTodosResponse" message="tns:IService1_ChecadoresSeleccionarTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadoresSeleccionarPorEmpleadosAsiganados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadoresSeleccionarPorEmpleadosAsiganados" message="tns:IService1_ChecadoresSeleccionarPorEmpleadosAsiganados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadoresSeleccionarPorEmpleadosAsiganadosResponse" message="tns:IService1_ChecadoresSeleccionarPorEmpleadosAsiganados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorSeleccionar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorSeleccionar" message="tns:IService1_ChecadorSeleccionar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorSeleccionarResponse" message="tns:IService1_ChecadorSeleccionar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorInsertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorInsertar" message="tns:IService1_ChecadorInsertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorInsertarResponse" message="tns:IService1_ChecadorInsertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorModificar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorModificar" message="tns:IService1_ChecadorModificar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorModificarResponse" message="tns:IService1_ChecadorModificar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorModificarIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorModificarIP" message="tns:IService1_ChecadorModificarIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorModificarIPResponse" message="tns:IService1_ChecadorModificarIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorSeleccionarXMAC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorSeleccionarXMAC" message="tns:IService1_ChecadorSeleccionarXMAC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorSeleccionarXMACResponse" message="tns:IService1_ChecadorSeleccionarXMAC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorEliminar" message="tns:IService1_ChecadorEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorEliminarResponse" message="tns:IService1_ChecadorEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorHoraServidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorHoraServidor" message="tns:IService1_ChecadorHoraServidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorHoraServidorResponse" message="tns:IService1_ChecadorHoraServidor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoSeleccionar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesoSeleccionar" message="tns:IService1_ControlAccesoSeleccionar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesoSeleccionarResponse" message="tns:IService1_ControlAccesoSeleccionar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesosSeleccionarXEmp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesosSeleccionarXEmp" message="tns:IService1_ControlAccesosSeleccionarXEmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesosSeleccionarXEmpResponse" message="tns:IService1_ControlAccesosSeleccionarXEmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertar" message="tns:IService1_ControlAccesoInsertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarResponse" message="tns:IService1_ControlAccesoInsertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarRegistro" message="tns:IService1_ControlAccesoInsertarRegistro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarRegistroResponse" message="tns:IService1_ControlAccesoInsertarRegistro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarAdministrador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarAdministrador" message="tns:IService1_ControlAccesoInsertarAdministrador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarAdministradorResponse" message="tns:IService1_ControlAccesoInsertarAdministrador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesModificar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesModificar" message="tns:IService1_ControlAccesModificar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesModificarResponse" message="tns:IService1_ControlAccesModificar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarExtras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarExtras" message="tns:IService1_ControlAccesoInsertarExtras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarExtrasResponse" message="tns:IService1_ControlAccesoInsertarExtras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesoEliminar" message="tns:IService1_ControlAccesoEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesoEliminarResponse" message="tns:IService1_ControlAccesoEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnidadesSeleccionarTodasXCvRamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UnidadesSeleccionarTodasXCvRamo" message="tns:IService1_UnidadesSeleccionarTodasXCvRamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UnidadesSeleccionarTodasXCvRamoResponse" message="tns:IService1_UnidadesSeleccionarTodasXCvRamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RamosSeleccionarTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RamosSeleccionarTodos" message="tns:IService1_RamosSeleccionarTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RamosSeleccionarTodosResponse" message="tns:IService1_RamosSeleccionarTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXRamo" message="tns:IService1_ReporteESXRamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoResponse" message="tns:IService1_ReporteESXRamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXNumeroEmp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXNumeroEmp" message="tns:IService1_ReporteESXNumeroEmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXNumeroEmpResponse" message="tns:IService1_ReporteESXNumeroEmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoUnidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoUnidad" message="tns:IService1_ReporteESXRamoUnidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoUnidadResponse" message="tns:IService1_ReporteESXRamoUnidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoExtras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoExtras" message="tns:IService1_ReporteESXRamoExtras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoExtrasResponse" message="tns:IService1_ReporteESXRamoExtras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXNumeroEmpExtras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXNumeroEmpExtras" message="tns:IService1_ReporteESXNumeroEmpExtras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXNumeroEmpExtrasResponse" message="tns:IService1_ReporteESXNumeroEmpExtras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoUnidadExtras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoUnidadExtras" message="tns:IService1_ReporteESXRamoUnidadExtras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoUnidadExtrasResponse" message="tns:IService1_ReporteESXRamoUnidadExtras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoPaseSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoPaseSalida" message="tns:IService1_ReporteESXRamoPaseSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoPaseSalidaResponse" message="tns:IService1_ReporteESXRamoPaseSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXNumeroEmpPaseSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXNumeroEmpPaseSalida" message="tns:IService1_ReporteESXNumeroEmpPaseSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXNumeroEmpPaseSalidaResponse" message="tns:IService1_ReporteESXNumeroEmpPaseSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoUnidadPaseSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoUnidadPaseSalida" message="tns:IService1_ReporteESXRamoUnidadPaseSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteESXRamoUnidadPaseSalidaResponse" message="tns:IService1_ReporteESXRamoUnidadPaseSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DiasInhabiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DiasInhabiles" message="tns:IService1_DiasInhabiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DiasInhabilesResponse" message="tns:IService1_DiasInhabiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiasInhabiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarDiasInhabiles" message="tns:IService1_InsertarDiasInhabiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarDiasInhabilesResponse" message="tns:IService1_InsertarDiasInhabiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDiasInhabiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EliminarDiasInhabiles" message="tns:IService1_EliminarDiasInhabiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EliminarDiasInhabilesResponse" message="tns:IService1_EliminarDiasInhabiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorReplicaInsertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorReplicaInsertar" message="tns:IService1_ChecadorReplicaInsertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorReplicaInsertarResponse" message="tns:IService1_ChecadorReplicaInsertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorReplicaSeleccionarTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ChecadorReplicaSeleccionarTodos" message="tns:IService1_ChecadorReplicaSeleccionarTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ChecadorReplicaSeleccionarTodosResponse" message="tns:IService1_ChecadorReplicaSeleccionarTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarPaseSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarPaseSalida" message="tns:IService1_ControlAccesoInsertarPaseSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesoInsertarPaseSalidaResponse" message="tns:IService1_ControlAccesoInsertarPaseSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarFaltasEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EvaluarFaltasEmpleado" message="tns:IService1_EvaluarFaltasEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EvaluarFaltasEmpleadoResponse" message="tns:IService1_EvaluarFaltasEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarDiasEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EvaluarDiasEmpleado" message="tns:IService1_EvaluarDiasEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EvaluarDiasEmpleadoResponse" message="tns:IService1_EvaluarDiasEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarEmpleadoDatosBasicosXNumeroEmp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarEmpleadoDatosBasicosXNumeroEmp" message="tns:IService1_SeleccionarEmpleadoDatosBasicosXNumeroEmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarEmpleadoDatosBasicosXNumeroEmpResponse" message="tns:IService1_SeleccionarEmpleadoDatosBasicosXNumeroEmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUltimoTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarUltimoTurno" message="tns:IService1_SeleccionarUltimoTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarUltimoTurnoResponse" message="tns:IService1_SeleccionarUltimoTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTurnoXFecha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarTurnoXFecha" message="tns:IService1_SeleccionarTurnoXFecha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarTurnoXFechaResponse" message="tns:IService1_SeleccionarTurnoXFecha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTurnoXTipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SeleccionarTurnoXTipo" message="tns:IService1_SeleccionarTurnoXTipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SeleccionarTurnoXTipoResponse" message="tns:IService1_SeleccionarTurnoXTipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesosSeleccionarXIdEmp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ControlAccesosSeleccionarXIdEmp" message="tns:IService1_ControlAccesosSeleccionarXIdEmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ControlAccesosSeleccionarXIdEmpResponse" message="tns:IService1_ControlAccesosSeleccionarXIdEmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="JustificarControlAcceso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/JustificarControlAcceso" message="tns:IService1_JustificarControlAcceso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/JustificarControlAccesoResponse" message="tns:IService1_JustificarControlAcceso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarFaltasXPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EvaluarFaltasXPartida" message="tns:IService1_EvaluarFaltasXPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EvaluarFaltasXPartidaResponse" message="tns:IService1_EvaluarFaltasXPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarRetardosXPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EvaluarRetardosXPartida" message="tns:IService1_EvaluarRetardosXPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EvaluarRetardosXPartidaResponse" message="tns:IService1_EvaluarRetardosXPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarPuntualidadXPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EvaluarPuntualidadXPartida" message="tns:IService1_EvaluarPuntualidadXPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EvaluarPuntualidadXPartidaResponse" message="tns:IService1_EvaluarPuntualidadXPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestWs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TestWs" message="tns:IService1_TestWs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TestWsResponse" message="tns:IService1_TestWs_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUsuarioXUsername">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarUsuarioXUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUsuarioXID">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarUsuarioXID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPermisosUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/EliminarPermisosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarPermisoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/AsignarPermisoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUsuariosTodos">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarUsuariosTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarEmpleadoXID">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarEmpleadoXID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarEmpleadoXNumeroEmp">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarEmpleadoXNumeroEmp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarEmpleadosRamoUnidad">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelecionarEmpleadosRamoUnidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarEmpleadosRH">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelecionarEmpleadosRH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPermisosDisponibles">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarPermisosDisponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IService1/ModificarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarDatosEmpleadoNomina">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarDatosEmpleadoNomina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTodosEmpleadosNomina">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarTodosEmpleadosNomina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTodosEmpleadosChecador">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarTodosEmpleadosChecador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarDatosEmpleadoRH">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarDatosEmpleadoRH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarFotografia">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarFotografia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorariosSeleccionarXIdEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IService1/HorariosSeleccionarXIdEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorarioEliminar">
+      <soap:operation soapAction="http://tempuri.org/IService1/HorarioEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorarioInsertar">
+      <soap:operation soapAction="http://tempuri.org/IService1/HorarioInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorarioModificar">
+      <soap:operation soapAction="http://tempuri.org/IService1/HorarioModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadoresSeleccionarTodos">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadoresSeleccionarTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadoresSeleccionarPorEmpleadosAsiganados">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadoresSeleccionarPorEmpleadosAsiganados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorSeleccionar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorSeleccionar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorInsertar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorModificar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorModificarIP">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorModificarIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorSeleccionarXMAC">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorSeleccionarXMAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorEliminar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorHoraServidor">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorHoraServidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoSeleccionar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesoSeleccionar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesosSeleccionarXEmp">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesosSeleccionarXEmp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesoInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarRegistro">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesoInsertarRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarAdministrador">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesoInsertarAdministrador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesModificar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarExtras">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesoInsertarExtras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoEliminar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesoEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnidadesSeleccionarTodasXCvRamo">
+      <soap:operation soapAction="http://tempuri.org/IService1/UnidadesSeleccionarTodasXCvRamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RamosSeleccionarTodos">
+      <soap:operation soapAction="http://tempuri.org/IService1/RamosSeleccionarTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamo">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXRamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXNumeroEmp">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXNumeroEmp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoUnidad">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXRamoUnidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoExtras">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXRamoExtras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXNumeroEmpExtras">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXNumeroEmpExtras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoUnidadExtras">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXRamoUnidadExtras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoPaseSalida">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXRamoPaseSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXNumeroEmpPaseSalida">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXNumeroEmpPaseSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteESXRamoUnidadPaseSalida">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReporteESXRamoUnidadPaseSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DiasInhabiles">
+      <soap:operation soapAction="http://tempuri.org/IService1/DiasInhabiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiasInhabiles">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertarDiasInhabiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDiasInhabiles">
+      <soap:operation soapAction="http://tempuri.org/IService1/EliminarDiasInhabiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorReplicaInsertar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorReplicaInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChecadorReplicaSeleccionarTodos">
+      <soap:operation soapAction="http://tempuri.org/IService1/ChecadorReplicaSeleccionarTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesoInsertarPaseSalida">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesoInsertarPaseSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarFaltasEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IService1/EvaluarFaltasEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarDiasEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IService1/EvaluarDiasEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarEmpleadoDatosBasicosXNumeroEmp">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarEmpleadoDatosBasicosXNumeroEmp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarUltimoTurno">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarUltimoTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTurnoXFecha">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarTurnoXFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarTurnoXTipo">
+      <soap:operation soapAction="http://tempuri.org/IService1/SeleccionarTurnoXTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlAccesosSeleccionarXIdEmp">
+      <soap:operation soapAction="http://tempuri.org/IService1/ControlAccesosSeleccionarXIdEmp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JustificarControlAcceso">
+      <soap:operation soapAction="http://tempuri.org/IService1/JustificarControlAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarFaltasXPartida">
+      <soap:operation soapAction="http://tempuri.org/IService1/EvaluarFaltasXPartida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarRetardosXPartida">
+      <soap:operation soapAction="http://tempuri.org/IService1/EvaluarRetardosXPartida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluarPuntualidadXPartida">
+      <soap:operation soapAction="http://tempuri.org/IService1/EvaluarPuntualidadXPartida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestWs">
+      <soap:operation soapAction="http://tempuri.org/IService1/TestWs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://appscloud.campeche.gob.mx/ControlAsistenciaServiciosWeb/ControlAsistenciaServiciosWeb.Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

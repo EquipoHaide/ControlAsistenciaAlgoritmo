@@ -3,35 +3,15 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
+
 namespace ControlAccesoES
 {
     class MainClass
     {
+        
         public static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
-
-
-            //var t1 = "22:00:00 PM";
-            ////var t2 = "00:00:00 AM";
-            //DateTime.ParseExact(t1, "M/d/yyyy hh:mm", CultureInfo.InvariantCulture);
-            //var time1 = new  DateTime.ParseExact(t1, "hh:mm:ss tt");
-
-
-
-            //d.AddDays(DateTime.Now.Date);
-
-
-            //var time1 = new DateTime(2022, 12, 05, 08, 05, 00);
-
-            // ENTRADA
-            //var time2 = new DateTime(2022,12,09,06,04,45); // SALIDA
-
-
-            //registroAcceso.Add(new DateTime(2022, 12, 05, 23, 58, 00)); // ENTRADA  --- 11:58:00 pm 
-            //registroAcceso.Add(new DateTime(2022, 12, 06, 05, 30, 00)); //SALIDA ANTICIPADA --- 05:30:00 am
-            //registroAcceso.Add(new DateTime(2022, 12, 06, 23, 05, 00)); // ENTRADA  --- 11:05:00 pm 
-            //registroAcceso.Add(new DateTime(2022, 12, 07, 06, 01, 00)); //SALIDA NORMAL --- 06:01:00 am
+            ControlAsistenciaLocal.Service1Client servicio = new ControlAsistenciaLocal.Service1Client();
 
             var check = true;
             while (check)
@@ -42,43 +22,39 @@ namespace ControlAccesoES
                 //DateTime d = DateTime.ParseExact(texto, "H:m:s", null);
                 //DateTime registroNuevo = DateTime.ParseExact(texto, "d/M/yyyy H:m:s", null);
 
-                string timeString = texto;//"05/12/2022 13:30:00";
+                string timeString = texto;//"26/12/2022 20:05:02";
                 IFormatProvider culture = new CultureInfo("en-US", true);
                 DateTime fecha = DateTime.ParseExact(timeString, "dd/MM/yyyy HH:mm:ss", culture);
 
                 DateTime diaNulo = new DateTime(1900, 1, 1);
 
-                List<ModeloHorario> horarios = CargarHoras();
-                //List<DateTime> registroAcceso = new List<DateTime>();
-                //Validar SI EL EMPLEADO TIENE HORARIO NOCTURNO
-                //SI NO TIENE TOMAR LOS HORARIOS NORMALES
-                var horariosNOC = horarios.Where(x => x.TipoTurno == "Noc" && x.FechaInicio.Date <= fecha.Date && x.FechaFin.Date >= fecha.Date).ToList();
-                if(horariosNOC.Count() > 0) {
+                List<ControlAsistenciaLocal.ObjHorario> horarios = CargarHoras();
+
+                var horariosVigentes = SeleccionarHorarioCorrespondiente(fecha, horarios);
 
 
-                    var horario = SeleccionarHorarioCorrespondiente(fecha,horariosNOC);
+           
+                var fechaI = new DateTime(fecha.Year, fecha.Month, fecha.Day, 0, 0, 0);
+                var fechaF = new DateTime(fecha.Year, fecha.Month, fecha.Day, 23, 59, 59);
 
+                List<ControlAsistenciaLocal.ObjControlAcceso> listaChecadas = servicio.ControlAccesosSeleccionarXEmp(21325, fechaI, fechaF, true).ToList();
 
-                    List<ModeloRegistro> registroBD = new List<ModeloRegistro>();
+                if (horariosVigentes.Count() == 1) {
 
-                    var registroEntrada = registroBD.Where(x => x.horaAcceso == fecha && x.tipo == "E" && x.turno == horario.TipoTurno).Select(y => y.horaAcceso).FirstOrDefault();
+                    var registroEntrada = listaChecadas.Where(x => x.ES == "E" && x.turno == 1).Select(y => y.tiempo).FirstOrDefault();
                        
-
-                    var registroSalida = registroBD.Where(x => x.horaAcceso == fecha && x.tipo == "S" && x.turno == horario.TipoTurno).Select(y => y.horaAcceso).FirstOrDefault();
+                    var registroSalida = listaChecadas.Where(x => x.ES == "S" && x.turno == 1).Select(y => y.tiempo).FirstOrDefault();
                 
-                    //foreach (var hora in registroAcceso)
-                    //{
-
                     switch (fecha.DayOfWeek)
                     {
                         case DayOfWeek.Monday:
-                            ValidaES(fecha, horario.LunesEntrada, horario.LunesSalida, registroEntrada, registroSalida);
+                            ValidaES(fecha, horariosVigentes[0].lunesEntrada, horariosVigentes[0].lunesSalida, registroEntrada, registroSalida);
                             break;
                         case DayOfWeek.Tuesday:
-                            ValidaES(fecha, horario.MartesEntrada, horario.MartesSalida, registroEntrada, registroSalida);
+                            //ValidaES(fecha, horario.MartesEntrada, horario.MartesSalida, registroEntrada, registroSalida);
                             break;
                         case DayOfWeek.Wednesday:
-                            ValidaES(fecha, horario.MiercolesEntrada, horario.MiercolesSalida, registroEntrada, registroSalida);
+                            //ValidaES(fecha, horario.MiercolesEntrada, horario.MiercolesSalida, registroEntrada, registroSalida);
                             break;
                         case DayOfWeek.Thursday:
 
@@ -93,15 +69,44 @@ namespace ControlAccesoES
 
                             break;
                     }
-
-
-                    //}
-
-
                 }
                 else
                 {
-                   
+                    var registroEntradaUno = listaChecadas.Where(x => x.ES == "E" && x.turno == 1).Select(y => y.tiempo).FirstOrDefault();
+
+                    var registroSalidaUno = listaChecadas.Where(x => x.ES == "S" && x.turno == 1).Select(y => y.tiempo).FirstOrDefault();
+
+                    var registroEntradaDos = listaChecadas.Where(x => x.ES == "E" && x.turno == 2).Select(y => y.tiempo).FirstOrDefault();
+
+                    var registroSalidaDos = listaChecadas.Where(x => x.ES == "S" && x.turno == 2).Select(y => y.tiempo).FirstOrDefault();
+
+
+
+                    switch (fecha.DayOfWeek)
+                    {
+                        case DayOfWeek.Monday:
+                            //ValidaES(fecha, horariosVigentes[0].lunesEntrada, horariosVigentes[0].lunesSalida, registroEntrada, registroSalida);
+                      
+                            break;
+                        case DayOfWeek.Tuesday:
+                            //ValidaES(fecha, horario.MartesEntrada, horario.MartesSalida, registroEntrada, registroSalida);
+                            break;
+                        case DayOfWeek.Wednesday:
+                            //ValidaES(fecha, horario.MiercolesEntrada, horario.MiercolesSalida, registroEntrada, registroSalida);
+                            break;
+                        case DayOfWeek.Thursday:
+
+                            break;
+                        case DayOfWeek.Friday:
+
+                            break;
+                        case DayOfWeek.Saturday:
+
+                            break;
+                        case DayOfWeek.Sunday:
+
+                            break;
+                    }
                 }
 
 
@@ -112,26 +117,114 @@ namespace ControlAccesoES
             }
 
 
-         
+
 
 
 
 
         }
+       
 
+        private static List<ControlAsistenciaLocal.ObjHorario> SeleccionarHorarioCorrespondiente ( DateTime time, List<ControlAsistenciaLocal.ObjHorario> listaHorarios) {
 
-        private static ModeloHorario SeleccionarHorarioCorrespondiente(DateTime time,List<ModeloHorario> listaHorarios) {
+            var horariosXFecha = listaHorarios.Where(x => x.tipoTurno == "N" && x.periodoInicial <= time && x.periodoFinal >= time).ToList();
+            var intervaloConfianza = 70; // 1 hora 10 min 
+          
+            var listaHorario = new List<ControlAsistenciaLocal.ObjHorario>();
+            foreach (var horario in horariosXFecha)
+            {
+                DateTime diaNulo = new DateTime(time.Year, time.Month, time.Day);
 
+                switch (time.DayOfWeek)
+                {  
+                    case DayOfWeek.Monday:
+                        DateTime horaLunesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.lunesEntrada.Hour, horario.lunesEntrada.Minute, horario.lunesEntrada.Second);
+                        DateTime horaLunesSalida = new DateTime(time.Year, time.Month, time.Day, horario.lunesSalida.Hour, horario.lunesSalida.Minute, horario.lunesSalida.Second);
 
+                        if (horaLunesEntrada == diaNulo)
+                        {
+                            if (time >= horaLunesSalida.AddMinutes(intervaloConfianza))
+                            {
+                                listaHorario.Add(horario);
+                            }
 
+                        }else if(horaLunesSalida == diaNulo)
+                        {
+                            if (time >= horaLunesEntrada.AddMinutes(-intervaloConfianza) && time <= horaLunesEntrada.AddMinutes(intervaloConfianza))
+                            {
+                                listaHorario.Add(horario);
+                            }
+                        }
+                        else
+                        {
+                            if((time > horaLunesEntrada.AddMinutes(-intervaloConfianza) || time <= horaLunesSalida.AddMinutes(intervaloConfianza)) 
+                                && time <= horaLunesSalida.AddMinutes(intervaloConfianza))
+                            {
+                                listaHorario.Add(horario);
+                            }
+                        }
+                     
+                        break;
+                    case DayOfWeek.Tuesday:
+                        DateTime horaMartesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.martesEntrada.Hour, horario.martesEntrada.Minute, horario.martesEntrada.Second);
+                        DateTime horaMartesSalida = new DateTime(time.Year, time.Month, time.Day, horario.martesSalida.Hour, horario.martesSalida.Minute, horario.martesSalida.Second);
+                        if (time <= horaMartesEntrada.AddMinutes(-intervaloConfianza) || time >= horaMartesSalida.AddMinutes(intervaloConfianza))
+                        {
+                            listaHorario.Add(horario);
+                        }
+                        break;
+                    case DayOfWeek.Wednesday:
+                        DateTime horaMiercolesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.miercolesEntrada.Hour, horario.miercolesEntrada.Minute, horario.miercolesEntrada.Second);
+                        DateTime horaMiercolesSalida = new DateTime(time.Year, time.Month, time.Day, horario.miercolesSalida.Hour, horario.miercolesSalida.Minute, horario.miercolesSalida.Second);
+                        if (time <= horaMiercolesEntrada.AddMinutes(-intervaloConfianza) || time >= horaMiercolesSalida.AddMinutes(intervaloConfianza))
+                        {
+                            listaHorario.Add(horario);
+                        }
+                        break;
+                    case DayOfWeek.Thursday:
+                        DateTime horaJuevesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.juevesEntrada.Hour, horario.juevesEntrada.Minute, horario.juevesEntrada.Second);
+                        DateTime horaJuevesSalida = new DateTime(time.Year, time.Month, time.Day, horario.juevesSalida.Hour, horario.juevesSalida.Minute, horario.juevesSalida.Second);
+                        if (time <= horaJuevesEntrada.AddMinutes(-intervaloConfianza) || time >= horaJuevesSalida.AddMinutes(intervaloConfianza))
+                        {
+                            listaHorario.Add(horario);
+                        }
+                        break;
+                    case DayOfWeek.Friday:
+                        DateTime horaViernesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.viernesEntrada.Hour, horario.viernesEntrada.Minute, horario.viernesEntrada.Second);
+                        DateTime horaViernesSalida = new DateTime(time.Year, time.Month, time.Day, horario.viernesSalida.Hour, horario.viernesSalida.Minute, horario.viernesSalida.Second);
+                        if (time <= horaViernesEntrada.AddMinutes(-intervaloConfianza) || time >= horaViernesSalida.AddMinutes(intervaloConfianza))
+                        {
+                            listaHorario.Add(horario);
+                        }
+                        break;
+                    case DayOfWeek.Saturday:
+                        DateTime horaSabadoEntrada = new DateTime(time.Year, time.Month, time.Day, horario.sabadoEntrada.Hour, horario.sabadoEntrada.Minute, horario.sabadoEntrada.Second);
+                        DateTime horaSabadoSalida = new DateTime(time.Year, time.Month, time.Day, horario.sabadoSalida.Hour, horario.sabadoSalida.Minute, horario.sabadoSalida.Second);
+                        if (time <= horaSabadoEntrada.AddMinutes(-intervaloConfianza) || time >= horaSabadoSalida.AddMinutes(intervaloConfianza))
+                        {
+                            listaHorario.Add(horario);
+                        }
+                        break;
+                    case DayOfWeek.Sunday:
+                        DateTime horaDomingoEntrada = new DateTime(time.Year, time.Month, time.Day, horario.domingoEntrada.Hour, horario.domingoEntrada.Minute, horario.domingoEntrada.Second);
+                        DateTime horaDomingoSalida = new DateTime(time.Year, time.Month, time.Day, horario.domingoSalida.Hour, horario.domingoSalida.Minute, horario.domingoSalida.Second);
+                        if (time <= horaDomingoEntrada.AddMinutes(-intervaloConfianza) || time >= horaDomingoSalida.AddMinutes(intervaloConfianza))
+                        {
+                            listaHorario.Add(horario);
+                        }
+                        break;
+                }
+            }
 
-            return new ModeloHorario();
+            return listaHorario;
         }
 
 
         private static void ValidaES(DateTime horaCheck , DateTime horaEntrada, DateTime horaSalida, DateTime registroEntrada, DateTime registroSalida)
         {
-            DateTime diaNulo = new DateTime(1900, 1, 1);
+
+            //ControlAsistenciaLocal.Service1Client servicio = new ControlAsistenciaLocal.Service1Client();
+            DateTime diaNulo = new DateTime(horaCheck.Year,horaCheck.Month, horaCheck.Day);
 
              if ((horaCheck.Hour <= horaEntrada.Hour || horaCheck.Hour > horaEntrada.Hour)
                // && horaEntrada.Hour != diaNulo.Hour
@@ -142,6 +235,7 @@ namespace ControlAccesoES
                     if (horaCheck.Hour < horaSalida.Hour && horaEntrada == diaNulo)
                     {
                         Console.WriteLine("Entrada 1 ");
+                        //servicio.ControlAccesoInsertar(21325, horaCheck, "E", 1, "N");
                     }
                     else
                     {
@@ -204,56 +298,15 @@ namespace ControlAccesoES
             }
         }
 
-        private static List<ModeloHorario> CargarHoras()
+        private static List<ControlAsistenciaLocal.ObjHorario> CargarHoras()
         {
-            var horaEntradaLunes = new DateTime(1900, 01, 01, 22, 00, 00);
-            var horaSalidaLunes = new DateTime(1900, 01, 01, 00, 00, 00);
+            ControlAsistenciaLocal.Service1Client servicio = new ControlAsistenciaLocal.Service1Client();
 
-            var horaEntradaMartes = new DateTime(1900, 01, 01, 22, 00, 00);
-            var horaSalidaMartes = new DateTime(1900, 01, 01, 06, 00, 00);
+            //ID MIO = 21325
+            List<ControlAsistenciaLocal.ObjHorario> listaHorarios = servicio.HorariosSeleccionarXIdEmpleado(21325).ToList();
 
-            var horaEntradaMiercoles = new DateTime(1900, 01, 01, 22, 00, 00);
-            var horaSalidaMiercoles = new DateTime(1900, 01, 01, 06, 00, 00);
-
-            var fechaInicio = new DateTime(2022, 11, 15, 00, 00, 00);
-            var fechaFin = new DateTime(3000, 01, 01, 00, 00, 00);
-
-
-            var horaEntradaLunes2 = new DateTime(1900, 01, 01, 22, 00, 00);
-            var horaSalidaLunes2 = new DateTime(1900, 01, 01, 00, 00, 00);
-
-            var horaEntradaMartes2 = new DateTime(1900, 01, 01, 22, 00, 00);
-            var horaSalidaMartes2 = new DateTime(1900, 01, 01, 06, 00, 00);
-
-            var horaEntradaMiercoles2 = new DateTime(1900, 01, 01, 22, 00, 00);
-            var horaSalidaMiercoles2 = new DateTime(1900, 01, 01, 06, 00, 00);
-
-            var fechaInicio2 = new DateTime(2022, 12, 01, 00, 00, 00);
-            var fechaFin2 = new DateTime(3000, 01, 01, 00, 00, 00);
-
-            ModeloHorario horarioTurnoUNO = new ModeloHorario();
-            horarioTurnoUNO.LunesEntrada = horaEntradaLunes;
-            horarioTurnoUNO.LunesSalida = horaSalidaLunes;
-            horarioTurnoUNO.MartesEntrada = horaEntradaMartes;
-            horarioTurnoUNO.MartesSalida = horaSalidaMartes;
-            horarioTurnoUNO.MiercolesEntrada = horaEntradaMiercoles;
-            horarioTurnoUNO.MiercolesSalida = horaSalidaMiercoles;
-            horarioTurnoUNO.FechaInicio = fechaInicio;
-            horarioTurnoUNO.FechaFin = fechaFin;
-            horarioTurnoUNO.TipoTurno = "Noc";
-
-
-            //ModeloHorario horarioTurnoDOS = new ModeloHorario();
-            //horarioTurnoDOS.LunesEntrada = horaEntradaLunes2;
-            //horarioTurnoDOS.LunesSalida = horaSalidaLunes2;
-            //horarioTurnoDOS.MartesEntrada = horaEntradaMartes2;
-            //horarioTurnoDOS.MartesSalida = horaSalidaMartes2;
-            //horarioTurnoDOS.MiercolesEntrada = horaEntradaMiercoles2;
-            //horarioTurnoDOS.MiercolesSalida = horaSalidaMiercoles2;
-            //horarioTurnoDOS.FechaInicio = fechaInicio2;
-            //horarioTurnoDOS.FechaFin = fechaFin2;
-
-            return new List<ModeloHorario> { horarioTurnoUNO /*,horarioTurnoDOS*/ };
+            
+            return new List<ControlAsistenciaLocal.ObjHorario> ( listaHorarios );
         }
     }
 

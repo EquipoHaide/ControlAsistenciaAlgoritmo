@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -28,12 +28,172 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ControlAsistenciaLocal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ControlAsistencia\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ModeloRegistro.cs" />
     <Compile Include="ModeloHorario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\ControlAsistenciaLocal\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjChecador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjChecadorReplica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjControlAcceso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjDiasInhabiles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjEmpleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjEvaluacionFalta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjHorario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjPermiso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjRamo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjReporteES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjUnidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAccesoES.ControlAsistenciaLocal.ObjUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\ControlAsistenciaServiciosWeb.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\Objetos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\service.wsdl" />
+    <None Include="Connected Services\ControlAsistenciaLocal\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistenciaLocal\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjChecador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjChecadorReplica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjControlAcceso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjDiasInhabiles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjEmpleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjEvaluacionFalta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjHorario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjPermiso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjRamo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjReporteES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjUnidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAccesoES.ControlAsistencia.ObjUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAsistenciaServiciosWeb.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAsistenciaServiciosWeb1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAsistenciaServiciosWeb2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAsistenciaServiciosWeb3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\ControlAsistenciaServiciosWeb4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ControlAsistencia\Service1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ControlAsistenciaLocal\" />
+    <WCFMetadataStorage Include="Connected Services\ControlAsistencia\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ControlAsistencia\ControlAsistenciaServiciosWeb.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ControlAsistencia\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ControlAsistencia\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ControlAsistencia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ControlAsistenciaLocal\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ControlAsistenciaLocal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ControlAsistenciaLocal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,1118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ControlAsistenciaServiciosWeb" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Objetos" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ControlAsistenciaServiciosWeb" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ControlAsistenciaServiciosWeb" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUsuarioXUsername">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUsuarioXUsernameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarUsuarioXUsernameResult" nillable="true" type="q3:ObjUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUsuarioXID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUsuarioXIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarUsuarioXIDResult" nillable="true" type="q4:ObjUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarPermisosUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarPermisosUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EliminarPermisosUsuarioResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarPermisoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idpermiso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarPermisoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsignarPermisoUsuarioResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUsuariosTodos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUsuariosTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarUsuariosTodosResult" nillable="true" type="q5:ArrayOfObjUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarEmpleadoXID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarEmpleadoXIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarEmpleadoXIDResult" nillable="true" type="q6:ObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarEmpleadoXNumeroEmp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroEmpleado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarEmpleadoXNumeroEmpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarEmpleadoXNumeroEmpResult" nillable="true" type="q7:ObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelecionarEmpleadosRamoUnidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cvramo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cvunidad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelecionarEmpleadosRamoUnidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SelecionarEmpleadosRamoUnidadResult" nillable="true" type="q8:ArrayOfObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelecionarEmpleadosRH">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelecionarEmpleadosRHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SelecionarEmpleadosRHResult" nillable="true" type="q9:ArrayOfObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarPermisosDisponibles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarPermisosDisponiblesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarPermisosDisponiblesResult" nillable="true" type="q10:ArrayOfObjPermiso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="partida" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cvpuesto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rfc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreUnidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="edoCiv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="curp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="foto" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="huella1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="huella2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="checaAsistencia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaIngreso" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaPuesto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="tipoEmp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModificarEmpleadoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="nempleado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partida" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cvpuesto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rfc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreUnidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaIngreso" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaPuesto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="curp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoEmp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertarEmpleadoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarDatosEmpleadoNomina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroEmpleado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarDatosEmpleadoNominaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarDatosEmpleadoNominaResult" nillable="true" type="q11:ObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTodosEmpleadosNomina">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTodosEmpleadosNominaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarTodosEmpleadosNominaResult" nillable="true" type="q12:ArrayOfObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTodosEmpleadosChecador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="numerosEmpleados" nillable="true" type="q13:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTodosEmpleadosChecadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarTodosEmpleadosChecadorResult" nillable="true" type="q14:ArrayOfObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarDatosEmpleadoRH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroEmpleado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarDatosEmpleadoRHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarDatosEmpleadoRHResult" nillable="true" type="q15:ObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarFotografia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="foto" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="IdEmpleado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarFotografiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarFotografiaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorariosSeleccionarXIdEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorariosSeleccionarXIdEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="HorariosSeleccionarXIdEmpleadoResult" nillable="true" type="q16:ArrayOfObjHorario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorarioEliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="idTurno" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorarioEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HorarioEliminarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorarioInsertar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="nombreTurno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lunesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="lunesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="martesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="martesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="miercolesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="miercolesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="juevesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="juevesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="viernesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="viernesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sabadoE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sabadoS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="domingoE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="domingoS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="periodoIni" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="periodoFin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="tipoTurno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estimulo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="turno" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorarioInsertarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HorarioInsertarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorarioModificar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="idTurno" type="xs:int" />
+        <xs:element minOccurs="0" name="lunesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="lunesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="martesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="martesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="miercolesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="miercolesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="juevesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="juevesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="viernesE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="viernesS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sabadoE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sabadoS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="domingoE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="domingoS" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="periodoIni" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="periodoFin" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorarioModificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HorarioModificarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadoresSeleccionarTodos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadoresSeleccionarTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ChecadoresSeleccionarTodosResult" nillable="true" type="q17:ArrayOfObjChecador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadoresSeleccionarPorEmpleadosAsiganados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cvramo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cvunidad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadoresSeleccionarPorEmpleadosAsiganadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ChecadoresSeleccionarPorEmpleadosAsiganadosResult" nillable="true" type="q18:ArrayOfObjChecador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorSeleccionar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idChecador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorSeleccionarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ChecadorSeleccionarResult" nillable="true" type="q19:ObjChecador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorInsertar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaAlta" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="mac" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="empleadosCargados" type="xs:boolean" />
+        <xs:element minOccurs="0" name="AlmacenaRegLocal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorInsertarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChecadorInsertarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorModificar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idChecador" type="xs:int" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaAlta" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="mac" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="empleadosCargados" type="xs:boolean" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listadoEmp" nillable="true" type="q20:ArrayOfstring" />
+        <xs:element minOccurs="0" name="AlmacenaRegLocal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="horaRep" type="xs:int" />
+        <xs:element minOccurs="0" name="minRep" type="xs:int" />
+        <xs:element minOccurs="0" name="segRep" type="xs:int" />
+        <xs:element minOccurs="0" name="lapso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorModificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChecadorModificarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorModificarIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idChecador" type="xs:int" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorModificarIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChecadorModificarIPResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorSeleccionarXMAC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mac" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorSeleccionarXMACResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ChecadorSeleccionarXMACResult" nillable="true" type="q21:ObjChecador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorEliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChecadorEliminarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorHoraServidor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorHoraServidorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChecadorHoraServidorResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoSeleccionar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoSeleccionarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ControlAccesoSeleccionarResult" nillable="true" type="q22:ObjControlAcceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesosSeleccionarXEmp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="porFecha" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesosSeleccionarXEmpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ControlAccesosSeleccionarXEmpResult" nillable="true" type="q23:ArrayOfObjControlAcceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaHora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="turno" type="xs:int" />
+        <xs:element minOccurs="0" name="justificado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlAccesoInsertarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarRegistro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaHora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="justificado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarRegistroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlAccesoInsertarRegistroResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarAdministrador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaHora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="turno" type="xs:int" />
+        <xs:element minOccurs="0" name="justificado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+        <xs:element minOccurs="0" name="motivo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarAdministradorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlAccesoInsertarAdministradorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesModificar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaHora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="turno" type="xs:int" />
+        <xs:element minOccurs="0" name="justificado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+        <xs:element minOccurs="0" name="motivo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesModificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlAccesModificarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarExtras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaHora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarExtrasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlAccesoInsertarExtrasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoEliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlAccesoEliminarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnidadesSeleccionarTodasXCvRamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CvRamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnidadesSeleccionarTodasXCvRamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="UnidadesSeleccionarTodasXCvRamoResult" nillable="true" type="q24:ArrayOfObjUnidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RamosSeleccionarTodos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RamosSeleccionarTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="RamosSeleccionarTodosResult" nillable="true" type="q25:ArrayOfObjRamo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ramo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXRamoResult" nillable="true" type="q26:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXNumeroEmp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nemp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXNumeroEmpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXNumeroEmpResult" nillable="true" type="q27:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoUnidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="cvRamoUni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoUnidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXRamoUnidadResult" nillable="true" type="q28:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoExtras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ramo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoExtrasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXRamoExtrasResult" nillable="true" type="q29:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXNumeroEmpExtras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nemp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXNumeroEmpExtrasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXNumeroEmpExtrasResult" nillable="true" type="q30:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoUnidadExtras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="cvRamoUni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoUnidadExtrasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXRamoUnidadExtrasResult" nillable="true" type="q31:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoPaseSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ramo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoPaseSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXRamoPaseSalidaResult" nillable="true" type="q32:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXNumeroEmpPaseSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nemp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXNumeroEmpPaseSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXNumeroEmpPaseSalidaResult" nillable="true" type="q33:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoUnidadPaseSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="cvRamoUni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteESXRamoUnidadPaseSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ReporteESXRamoUnidadPaseSalidaResult" nillable="true" type="q34:ArrayOfObjReporteES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiasInhabiles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiasInhabilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="DiasInhabilesResult" nillable="true" type="q35:ArrayOfObjDiasInhabiles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarDiasInhabiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dia" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="concepto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarDiasInhabilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertarDiasInhabilesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarDiasInhabiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarDiasInhabilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EliminarDiasInhabilesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorReplicaInsertar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idchec" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaIni" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="numeroReg" type="xs:int" />
+        <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorReplicaInsertarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChecadorReplicaInsertarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorReplicaSeleccionarTodos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idC" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChecadorReplicaSeleccionarTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ChecadorReplicaSeleccionarTodosResult" nillable="true" type="q36:ArrayOfObjChecadorReplica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarPaseSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaHora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesoInsertarPaseSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlAccesoInsertarPaseSalidaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarFaltasEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nemp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarFaltasEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="EvaluarFaltasEmpleadoResult" nillable="true" type="q37:ArrayOfObjEvaluacionFalta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarDiasEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nemp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarDiasEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="EvaluarDiasEmpleadoResult" nillable="true" type="q38:ArrayOfObjEvaluacionFalta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarEmpleadoDatosBasicosXNumeroEmp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroEmpleado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarEmpleadoDatosBasicosXNumeroEmpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarEmpleadoDatosBasicosXNumeroEmpResult" nillable="true" type="q39:ObjEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUltimoTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarUltimoTurnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarUltimoTurnoResult" nillable="true" type="q40:ObjHorario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTurnoXFecha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTurnoXFechaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarTurnoXFechaResult" nillable="true" type="q41:ArrayOfObjHorario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTurnoXTipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeleccionarTurnoXTipoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="SeleccionarTurnoXTipoResult" nillable="true" type="q42:ArrayOfObjHorario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesosSeleccionarXIdEmp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlAccesosSeleccionarXIdEmpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="ControlAccesosSeleccionarXIdEmpResult" nillable="true" type="q43:ArrayOfObjControlAcceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JustificarControlAcceso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EoS" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="justificado" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JustificarControlAccesoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="JustificarControlAccesoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarFaltasXPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cvRamo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cvUnidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarFaltasXPartidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="EvaluarFaltasXPartidaResult" nillable="true" type="q44:ArrayOfObjEvaluacionFalta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarRetardosXPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cvRamo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cvUnidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarRetardosXPartidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="EvaluarRetardosXPartidaResult" nillable="true" type="q45:ArrayOfObjEvaluacionFalta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarPuntualidadXPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cvRamo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cvUnidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechai" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaf" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EvaluarPuntualidadXPartidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Objetos" minOccurs="0" name="EvaluarPuntualidadXPartidaResult" nillable="true" type="q46:ArrayOfObjEvaluacionFalta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestWs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestWsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestWsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,4 @@
+C:\Users\Israel\Downloads\ControlAsistenciaAlgoritmo-main\ControlAsistenciaAlgoritmo-main\ControlAcceso-ES\bin\Release\ControlAcceso-ES.exe.config
+C:\Users\Israel\Downloads\ControlAsistenciaAlgoritmo-main\ControlAsistenciaAlgoritmo-main\ControlAcceso-ES\bin\Release\ControlAcceso-ES.exe
+C:\Users\Israel\Downloads\ControlAsistenciaAlgoritmo-main\ControlAsistenciaAlgoritmo-main\ControlAcceso-ES\obj\Release\ControlAcceso-ES.csproj.CoreCompileInputs.cache
+C:\Users\Israel\Downloads\ControlAsistenciaAlgoritmo-main\ControlAsistenciaAlgoritmo-main\ControlAcceso-ES\obj\Release\ControlAcceso-ES.exe
