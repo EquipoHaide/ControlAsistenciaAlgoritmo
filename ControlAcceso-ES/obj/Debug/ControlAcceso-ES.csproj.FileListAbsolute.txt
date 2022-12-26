@@ -1,0 +1,12 @@
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.csproj.AssemblyReference.cache
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.csproj.CoreCompileInputs.cache
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAcceso-ES/bin/Debug/ControlAcceso-ES.exe
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAcceso-ES/bin/Debug/ControlAcceso-ES.pdb
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.exe
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.pdb
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAsistenciaAlgoritmo/ControlAcceso-ES/bin/Debug/ControlAcceso-ES.exe
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAsistenciaAlgoritmo/ControlAcceso-ES/bin/Debug/ControlAcceso-ES.pdb
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAsistenciaAlgoritmo/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.csproj.AssemblyReference.cache
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAsistenciaAlgoritmo/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.csproj.CoreCompileInputs.cache
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAsistenciaAlgoritmo/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.exe
+/Users/haidehaaz/Desktop/ControlAcceso-ES/ControlAsistenciaAlgoritmo/ControlAcceso-ES/obj/Debug/ControlAcceso-ES.pdb
