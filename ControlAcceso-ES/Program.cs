@@ -337,7 +337,18 @@ namespace ControlAccesoES
                         {
                             //VALIDAR SI LA HORA NO ESTA MUY CERCA DE LA HORA DE ENTRADA,PARA EVITAR QUE SE INSERTE
                             if (!(registroEntrada != diaNulo &&  horaCheck >= registroEntrada && registroEntrada.AddMinutes(45) >= horaCheck)) {
-                                if (registroSalida == diaNulo)
+
+                                ///
+                                ///VALIDAR SI LA HORA DE ENTRADA ANTERIORMENTE REGISTRADA Y LA NUEVA ENTRANTE  ESTAN DENTRO DEL INTERVALO 
+                                ///DE HORA-ENTRADA PARA CONSIDERAR SI SE ACTUALIZA ESE REGISTRO 
+                                ///EN EL CASO DE LOS HORARIOS QUE TIENE ENTRADA Y SALIDA A LA MISMA HORA NO APLICARIA ESTA CONDICIÓN 
+                                ///
+
+                                if(registroEntrada < horaEntrada.AddMinutes(-30) && horaCheck > horaEntrada.AddMinutes(-30) && horaEntrada.AddMinutes(60) >= horaCheck)
+                                {
+                                  Console.WriteLine("El registro : " + registroEntrada + " por ---> " + horaCheck);
+
+                                }else if (registroSalida == diaNulo)
                                 {
                                     Console.WriteLine("Salida 2 (PUEDE SER UNA SALIDA CORRECTA CONFIRME A SU HORA O UNA SALIDA ANTICIPADA)");
                                     //servicio.ControlAccesoInsertar(21325, horaCheck, "S", turno, "N");
