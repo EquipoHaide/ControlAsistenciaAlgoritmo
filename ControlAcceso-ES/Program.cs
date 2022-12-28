@@ -150,8 +150,8 @@ namespace ControlAccesoES
                     }
                 }
 
-                Console.WriteLine("Continuar Registros: ");
-                check = Convert.ToBoolean(Console.ReadLine());
+                //Console.WriteLine("Continuar Registros: ");
+                //check = Convert.ToBoolean(Console.ReadLine());
             }
 
         }
@@ -173,172 +173,98 @@ namespace ControlAccesoES
                         DateTime horaLunesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.lunesEntrada.Hour, horario.lunesEntrada.Minute, horario.lunesEntrada.Second);
                         DateTime horaLunesSalida = new DateTime(time.Year, time.Month, time.Day, horario.lunesSalida.Hour, horario.lunesSalida.Minute, horario.lunesSalida.Second);
 
-                        if (horaLunesEntrada == diaNulo)
-                        {
-                            TimeSpan inicioDia = new TimeSpan(00, 00, 01);
-                            //EVALUAR SI SE ENCUENTRADA ENTRE 00:00:01 Y LA HORA DE SALIDA 
-                            if (time.TimeOfDay >= inicioDia && horaLunesSalida.AddMinutes(intervaloConfianza) >= time)
-                            {
-                                listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                            }
-
-                        }
-                        else if (horaLunesSalida == diaNulo)
-                        {
-                            if (time >= horaLunesEntrada.AddMinutes(-intervaloConfianza) && time <= horaLunesEntrada.AddMinutes(intervaloConfianza))
-                            {
-                                //listaHorario.Add(horario);
-                                listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                            }
-                        }
-                        else
-                        {
-                            if (horaLunesEntrada.TimeOfDay > horaLunesSalida.TimeOfDay)
-                            {
-                                if (time >= horaLunesEntrada.AddMinutes(-intervaloConfianza) || horaLunesSalida.AddMinutes(intervaloConfianza) >= time)
-                                {
-                                    listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                                }
-                            }
-                            else
-                            {
-                                if (time >= horaLunesEntrada.AddMinutes(-intervaloConfianza) && horaLunesSalida.AddMinutes(intervaloConfianza) >= time)
-                                //&& time <= horaMartesSalida.AddMinutes(intervaloConfianza))
-                                {
-                                    //listaHorario.Add(horario);
-                                    listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                                }
-                            }
-                        }
+                        listaHorario.Add(ObtnerHorario(time,horaLunesEntrada,horaLunesSalida,diaNulo,intervaloConfianza,horario,turno));
 
                         break;
                     case DayOfWeek.Tuesday:
                         DateTime horaMartesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.martesEntrada.Hour, horario.martesEntrada.Minute, horario.martesEntrada.Second);
                         DateTime horaMartesSalida = new DateTime(time.Year, time.Month, time.Day, horario.martesSalida.Hour, horario.martesSalida.Minute, horario.martesSalida.Second);
-                       
 
-                        if (horaMartesEntrada == diaNulo)
-                        {
-                            TimeSpan inicioDia = new TimeSpan(00, 00, 01);
-                            //EVALUAR SI SE ENCUENTRADA ENTRE 00:00:01 Y LA HORA DE SALIDA 
-                            if (time.TimeOfDay >= inicioDia && horaMartesSalida.AddMinutes(intervaloConfianza) >= time)
-                            {
-                                listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                            }
-
-                        }
-                        else if (horaMartesSalida == diaNulo)
-                        {
-                            if (time >= horaMartesEntrada.AddMinutes(-intervaloConfianza) && time <= horaMartesEntrada.AddMinutes(intervaloConfianza))
-                            {
-                                //listaHorario.Add(horario);
-                                listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                            }
-                        }
-                        else
-                        {
-                            if(horaMartesEntrada.TimeOfDay > horaMartesSalida.TimeOfDay)
-                            {
-                                if(time >= horaMartesEntrada.AddMinutes(-intervaloConfianza) || horaMartesSalida.AddMinutes(intervaloConfianza) >= time)
-                                {
-                                    listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                                }
-                            }
-                            else
-                            {
-                                if (time >= horaMartesEntrada.AddMinutes(-intervaloConfianza) && horaMartesSalida.AddMinutes(intervaloConfianza) >= time)
-                                //&& time <= horaMartesSalida.AddMinutes(intervaloConfianza))
-                                {
-                                    //listaHorario.Add(horario);
-                                    listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                                }
-                            }  
-                        }
-
+                        listaHorario.Add(ObtnerHorario(time, horaMartesEntrada, horaMartesSalida, diaNulo, intervaloConfianza, horario, turno));
                         break;
                     case DayOfWeek.Wednesday:
                         DateTime horaMiercolesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.miercolesEntrada.Hour, horario.miercolesEntrada.Minute, horario.miercolesEntrada.Second);
                         DateTime horaMiercolesSalida = new DateTime(time.Year, time.Month, time.Day, horario.miercolesSalida.Hour, horario.miercolesSalida.Minute, horario.miercolesSalida.Second);
-                        if (time <= horaMiercolesEntrada.AddMinutes(-intervaloConfianza) || time >= horaMiercolesSalida.AddMinutes(intervaloConfianza))
-                        {
-                            //listaHorario.Add(horario);
-                            listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                        }
+
+                        listaHorario.Add(ObtnerHorario(time, horaMiercolesEntrada, horaMiercolesSalida, diaNulo, intervaloConfianza, horario, turno));
+
                         break;
                     case DayOfWeek.Thursday:
                         DateTime horaJuevesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.juevesEntrada.Hour, horario.juevesEntrada.Minute, horario.juevesEntrada.Second);
                         DateTime horaJuevesSalida = new DateTime(time.Year, time.Month, time.Day, horario.juevesSalida.Hour, horario.juevesSalida.Minute, horario.juevesSalida.Second);
-                        if (time <= horaJuevesEntrada.AddMinutes(-intervaloConfianza) || time >= horaJuevesSalida.AddMinutes(intervaloConfianza))
-                        {
-                            //listaHorario.Add(horario);
-                            listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                        }
+
+                        listaHorario.Add(ObtnerHorario(time, horaJuevesEntrada, horaJuevesSalida, diaNulo, intervaloConfianza, horario, turno));
+
                         break;
                     case DayOfWeek.Friday:
                         DateTime horaViernesEntrada = new DateTime(time.Year, time.Month, time.Day, horario.viernesEntrada.Hour, horario.viernesEntrada.Minute, horario.viernesEntrada.Second);
                         DateTime horaViernesSalida = new DateTime(time.Year, time.Month, time.Day, horario.viernesSalida.Hour, horario.viernesSalida.Minute, horario.viernesSalida.Second);
-                      
-                        if (horaViernesEntrada == diaNulo)
-                        {
-                            TimeSpan inicioDia = new TimeSpan(00, 00, 01);
-                            //EVALUAR SI SE ENCUENTRADA ENTRE 00:00:01 Y LA HORA DE SALIDA 
-                            if (time.TimeOfDay >= inicioDia && horaViernesSalida.AddMinutes(intervaloConfianza) >= time)
-                            {
-                                listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                            }
 
-                        }
-                        else if (horaViernesSalida == diaNulo)
-                        {
-                            if (time >= horaViernesEntrada.AddMinutes(-intervaloConfianza) && time <= horaViernesEntrada.AddMinutes(intervaloConfianza))
-                            {
-                                //listaHorario.Add(horario);
-                                listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                            }
-                        }
-                        else
-                        {
-                            if (horaViernesEntrada.TimeOfDay > horaViernesSalida.TimeOfDay)
-                            {
-                                if (time >= horaViernesEntrada.AddMinutes(-intervaloConfianza) || horaViernesSalida.AddMinutes(intervaloConfianza) >= time)
-                                {
-                                    listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                                }
-                            }
-                            else
-                            {
-                                if (time >= horaViernesEntrada.AddMinutes(-intervaloConfianza) && horaViernesSalida.AddMinutes(intervaloConfianza) >= time)
-                                //&& time <= horaMartesSalida.AddMinutes(intervaloConfianza))
-                                {
-                                    //listaHorario.Add(horario);
-                                    listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                                }
-                            }
-                        }
+                        listaHorario.Add(ObtnerHorario(time, horaViernesEntrada, horaViernesSalida, diaNulo, intervaloConfianza, horario, turno));
+
                         break;
                     case DayOfWeek.Saturday:
                         DateTime horaSabadoEntrada = new DateTime(time.Year, time.Month, time.Day, horario.sabadoEntrada.Hour, horario.sabadoEntrada.Minute, horario.sabadoEntrada.Second);
                         DateTime horaSabadoSalida = new DateTime(time.Year, time.Month, time.Day, horario.sabadoSalida.Hour, horario.sabadoSalida.Minute, horario.sabadoSalida.Second);
-                        if (time <= horaSabadoEntrada.AddMinutes(-intervaloConfianza) || time >= horaSabadoSalida.AddMinutes(intervaloConfianza))
-                        {
-                            //listaHorario.Add(horario);
-                            listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                        }
+
+                        listaHorario.Add(ObtnerHorario(time, horaSabadoEntrada, horaSabadoSalida, diaNulo, intervaloConfianza, horario, turno));
+
                         break;
                     case DayOfWeek.Sunday:
                         DateTime horaDomingoEntrada = new DateTime(time.Year, time.Month, time.Day, horario.domingoEntrada.Hour, horario.domingoEntrada.Minute, horario.domingoEntrada.Second);
                         DateTime horaDomingoSalida = new DateTime(time.Year, time.Month, time.Day, horario.domingoSalida.Hour, horario.domingoSalida.Minute, horario.domingoSalida.Second);
-                        if (time <= horaDomingoEntrada.AddMinutes(-intervaloConfianza) || time >= horaDomingoSalida.AddMinutes(intervaloConfianza))
-                        {
-                            //listaHorario.Add(horario);
-                            listaHorario.Add(new ModeloHorario() { Horario = horario, TipoTurno = turno });
-                        }
+
+                        listaHorario.Add(ObtnerHorario(time, horaDomingoEntrada, horaDomingoSalida, diaNulo, intervaloConfianza, horario, turno));
+
                         break;
                 }
                 turno++;
             }
+           
+            return listaHorario.Where(x => x != null).ToList(); 
+        }
 
-            return listaHorario;
+        private static ModeloHorario ObtnerHorario(DateTime horaCheck ,DateTime horaEntrada, DateTime horaSalida,DateTime diaNulo, int intervaloConfianza, ControlAsistenciaLocal.ObjHorario horario, int turno)
+        {
+            if (horaEntrada == diaNulo)
+            {
+                TimeSpan inicioDia = new TimeSpan(00, 00, 01);
+                //EVALUAR SI SE ENCUENTRADA ENTRE 00:00:01 Y LA HORA DE SALIDA 
+                if (horaCheck.TimeOfDay >= inicioDia && horaSalida.AddMinutes(intervaloConfianza) >= horaCheck)
+                {
+                  return new ModeloHorario() { Horario = horario, TipoTurno = turno };
+                }
+                return null;
+            }
+            else if (horaSalida == diaNulo)
+            {
+                if (horaCheck >= horaEntrada.AddMinutes(-intervaloConfianza) && horaCheck <= horaEntrada.AddMinutes(intervaloConfianza))
+                {
+                    return new ModeloHorario() { Horario = horario, TipoTurno = turno };
+                }
+                return null;
+            }
+            else
+            {
+                if (horaEntrada.TimeOfDay > horaSalida.TimeOfDay)
+                {
+                    if (horaCheck >= horaEntrada.AddMinutes(-intervaloConfianza) || horaSalida.AddMinutes(intervaloConfianza) >= horaCheck)
+                    {
+                        return new ModeloHorario() { Horario = horario, TipoTurno = turno };
+                    }
+                    return null;
+                }
+                else
+                {
+                    if (horaCheck >= horaEntrada.AddMinutes(-intervaloConfianza) && horaSalida.AddMinutes(intervaloConfianza) >= horaCheck)
+                    //&& time <= horaMartesSalida.AddMinutes(intervaloConfianza))
+                    {
+                        //listaHorario.Add(horario);
+                        return new ModeloHorario() { Horario = horario, TipoTurno = turno };
+                    }
+                    return null;
+                }
+            }
         }
 
         private static void ValidaES(DateTime horaCheck , DateTime horaEntrada, DateTime horaSalida, DateTime registroEntrada, DateTime registroSalida,int turno)
@@ -400,17 +326,26 @@ namespace ControlAccesoES
                     }
                     else
                     {
-                        //if (registroSalida == null)
-                        //{
-                        if (registroSalida == diaNulo)
+                      
+                        if(horaCheck < registroEntrada  && registroEntrada != diaNulo)
                         {
-                            Console.WriteLine("Salida 2 (PUEDE SER UNA SALIDA CORRECTA CONFIRME A SU HORA O UNA SALIDA ANTICIPADA)");
-                            //servicio.ControlAccesoInsertar(21325, horaCheck, "S", turno, "N");
-                            servicio.ControlAccesoInsertar(21325, horaCheck, "S", turno, "N");
+                            ///ACTUALIZA LA HORA DE ENTRADA 
+                            /// 
+                             Console.WriteLine("El registro : "+ registroEntrada + " por ---> "+ horaCheck );
                         }
-
-                        //}
-
+                        else
+                        {
+                            //VALIDAR SI LA HORA NO ESTA MUY CERCA DE LA HORA DE ENTRADA,PARA EVITAR QUE SE INSERTE
+                            if (!(registroEntrada != diaNulo &&  horaCheck >= registroEntrada && registroEntrada.AddMinutes(45) >= horaCheck)) {
+                                if (registroSalida == diaNulo)
+                                {
+                                    Console.WriteLine("Salida 2 (PUEDE SER UNA SALIDA CORRECTA CONFIRME A SU HORA O UNA SALIDA ANTICIPADA)");
+                                    //servicio.ControlAccesoInsertar(21325, horaCheck, "S", turno, "N");
+                                    servicio.ControlAccesoInsertar(21325, horaCheck, "S", turno, "N");
+                                }
+                            }
+                           
+                        }
                     }
             }
          
@@ -428,52 +363,6 @@ namespace ControlAccesoES
         }
 
 
-
-        //if (horaCheck < horaSalida  /* && horaEntrada == diaNulo*/)
-        //{
-        //    Console.WriteLine("Entrada 1 ");
-        //    servicio.ControlAccesoInsertar(21325, horaCheck, "E", turno, "N");
-        //}
-        //else
-        //{
-        //    if (horaSalida.Hour != diaNulo.Hour)
-        //    {
-        //        if (horaCheck >= horaSalida && registroSalida == diaNulo)
-        //        {
-        //            Console.WriteLine("Salida 1");
-        //            servicio.ControlAccesoInsertar(21325, horaCheck, "S", turno, "N");
-        //        }
-        //        else if (horaCheck <= horaEntrada || horaCheck > horaEntrada && horaCheck < horaEntrada.AddHours(3))
-        //        {
-        //            Console.WriteLine("Entrada 2");
-        //            servicio.ControlAccesoInsertar(21325, horaCheck, "E", turno, "N");
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Salida Anticipada o Salida Normal Porque aun no se manda la entrada");
-        //            servicio.ControlAccesoInsertar(21325, horaCheck, "S", turno, "N");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (registroEntrada.Hour == diaNulo.Hour)
-        //        {
-        //            Console.WriteLine("Entrada 3");
-        //            servicio.ControlAccesoInsertar(21325, horaCheck, "E", turno, "N");
-        //        }
-        //        else
-        //        {
-        //            if (registroEntrada.Hour < horaCheck.Hour)
-        //            {
-        //                Console.WriteLine("Actualizo la hora de entrada");
-
-        //            }
-
-        //            Console.WriteLine("Sigue siendo entrada pero no se guarda ");
-
-        //        }
-        //    }
-        //}
     }
 
 }
