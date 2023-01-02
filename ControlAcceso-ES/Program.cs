@@ -37,7 +37,14 @@ namespace ControlAccesoES
 
                 List<ControlAsistenciaLocal.ObjControlAcceso> listaChecadas = servicio.ControlAccesosSeleccionarXEmp(21325, fechaI, fechaF, true).ToList();
 
-                if (horariosVigentes.Count() == 1) {
+                 if (horariosVigentes.Count() == 0) {
+
+                    var horariosXFecha = horarios.Where(x => x.tipoTurno == "N" && x.periodoInicial <= fecha && x.periodoFinal >= fecha).ToList();
+                    //POR ORDENAMIENTO 
+                    Console.Write("No Encontro horarios vigentes");
+
+                }
+                else if (horariosVigentes.Count() == 1) {
 
                     var registroEntrada = listaChecadas.Where(x => x.ES == "E" && x.turno == horariosVigentes[0].TipoTurno).Select(y => y.tiempo).FirstOrDefault();
                        
@@ -123,7 +130,7 @@ namespace ControlAccesoES
                                 fecha.Date + registroEntradaDos.TimeOfDay, fecha.Date + registroSalidaDos.TimeOfDay, horariosVigentes[1].TipoTurno);
 
                             break;
-                        case DayOfWeek.Friday:
+                        case DayOfWeek.Friday: 
                             ValidaES(fecha, fecha.Date + horariosVigentes[0].Horario.viernesEntrada.TimeOfDay, fecha.Date + horariosVigentes[0].Horario.viernesSalida.TimeOfDay,
                                 fecha.Date + registroEntradaUno.TimeOfDay, fecha.Date + registroSalidaUno.TimeOfDay, horariosVigentes[0].TipoTurno);
 
@@ -261,6 +268,18 @@ namespace ControlAccesoES
                     {
                         //listaHorario.Add(horario);
                         return new ModeloHorario() { Horario = horario, TipoTurno = turno };
+
+                    }
+                    else if (horaCheck >= horaSalida.AddMinutes(intervaloConfianza))
+                    {
+                        return new ModeloHorario() { Horario = horario, TipoTurno = turno };
+
+                    }else if(horaCheck <= horaEntrada.AddMinutes(-intervaloConfianza)){
+                        var horas = (horaEntrada - horaCheck).TotalHours;
+                        if( horas < 3) {
+                            return new ModeloHorario() { Horario = horario, TipoTurno = turno };
+                        }
+                       
                     }
                     return null;
                 }
